@@ -229,4 +229,18 @@ nav a {
     margin: 0 15px;
     font-size: 18px;
 }
+search-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px; /* Tamaño del icono */
+    cursor: pointer;
+}
 
+.search-btn i {
+    font-size: 24px; /* Ajusta el tamaño del icono según tus necesidades */
+}
+
+.search-btn:hover {
+    color: #ccc; /* Cambia el color del ícono al pasar el mouse */
+}
