@@ -1,16 +1,20 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    justify-content: space-between; /* Espaciado entre logo y contenido */
-    align-items: center;
-    padding: 10px 20px;
+header, footer {
     background-color: #000;
     color: white;
+    padding: 10px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -28,72 +32,13 @@ header {
     font-size: 24px;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Permite que la barra de búsqueda ocupe el espacio disponible */
-    justify-content: center; /* Centra la barra de búsqueda */
-    max-width: 500px;
-}
-
-#search {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.search-btn {
-    background-color: transparent;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.search-btn img {
-    width: 20px;
-    height: 20px;
-}
-
-/* Barra de navegación */
-.nav-links {
-    display: flex;
-    justify-content: flex-end; /* Alinea los enlaces a la derecha */
-    margin-left: 20px;
-}
-
-.nav-links a {
+nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
 }
 
-/* Estilos adicionales para el contenedor de sugerencias */
-.suggestions-box {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    max-height: 200px;
-    overflow-y: auto;
-    display: none;
-}
-
-.suggestions-box div {
-    padding: 8px;
-    cursor: pointer;
-}
-
-.suggestions-box div:hover {
-    background-color: #f0f0f0;
-}
-
-/* Estilos para el contenido principal */
 .container {
     background-color: #fff;
     padding: 20px;
@@ -189,25 +134,58 @@ header {
 /* Redes sociales */
 .social-icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Coloca los íconos en una columna */
+    align-items: center; /* Centra los íconos horizontalmente */
+    justify-content: center; /* Centra los íconos verticalmente */
     margin: 0 auto;
 }
 
 .social-icons a {
-    color: #fff;
-    font-size: 24px;
-    margin: 10px;
+    color: #ccc;
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+    margin-bottom: 10px; /* Espaciado entre íconos */
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #ccc;
+    color: #fff;
+}
+
+/* Estilos para las imágenes de productos */
+.product-card img {
+    width: 100%;
+    height: 200px; /* Puedes ajustar esta altura según el diseño que prefieras */
+    object-fit: cover; /* Esto asegura que la imagen mantenga su aspecto sin distorsionarse */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);  /* Animación de aumento de imagen */
+}
+
+.product-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilo del contenedor de la galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas por fila */
+    gap: 20px;
+    padding: 20px;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
