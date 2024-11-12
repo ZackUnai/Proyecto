@@ -77,6 +77,15 @@
             <p>&copy; 2024 Sport Style Hub. Todos los derechos reservados.</p>
         </div>
     </footer>
+     <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
+        <button class="search-btn">
+            <img src="lupa.png" alt="Buscar">
+        </button>
+        <div id="suggestions-box" class="suggestions-box"></div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
 
