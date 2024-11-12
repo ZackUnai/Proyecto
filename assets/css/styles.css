@@ -155,9 +155,12 @@ nav a {
 /* Estilos para las imágenes de productos */
 .product-card img {
     width: 100%;
+    height: 200px; /* Puedes ajustar esta altura según el diseño que prefieras */
+    object-fit: cover; /* Esto asegura que la imagen mantenga su aspecto sin distorsionarse */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
+
 
 .product-card:hover img {
     transform: scale(1.1);  /* Animación de aumento de imagen */
