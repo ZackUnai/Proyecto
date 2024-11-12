@@ -1,5 +1,4 @@
-/* styles.css */
-/* styles.css */
+//* styles.css */
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +43,7 @@ nav a {
     background-color: #fff;
     padding: 20px;
     margin: 20px auto;
-    max-width: 1000px; /* Ajusta el ancho máximo para que el fondo se vea a los costados */
+    max-width: 1000px;
     border-radius: 15px;
 }
 
@@ -57,7 +56,7 @@ nav a {
 
 @media (min-width: 768px) {
     .content {
-        flex-direction: row; /* Cambia a fila en pantallas más grandes */
+        flex-direction: row;
     }
 }
 
@@ -85,40 +84,6 @@ nav a {
 }
 
 /* Footer */
-
-/* Estilo del contenedor de la galería */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columnas por fila */
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Estilo de las tarjetas de producto */
-.product-card {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.product-card p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Efecto de hover */
-/* Estilos del pie de página */
-/* Estilos del pie de página */
 .footer {
     background-color: #000;
     color: #fff;
@@ -139,6 +104,7 @@ nav a {
     flex: 1;
     min-width: 200px;
     margin: 10px 0;
+    text-align: center;
 }
 
 .footer-section h3 {
@@ -165,57 +131,13 @@ nav a {
     color: #fff;
 }
 
-/* Redes sociales en columna */
-/* Redes sociales centradas en columna */
-.social-icons {
-    display: flex;
-    flex-direction: column; /* Coloca los íconos en una columna */
-    align-items: center; /* Centra los íconos horizontalmente */
-}
-
-.social-icons a {
-    color: #ccc;
-    font-size: 18px; /* Tamaño de fuente de los enlaces */
-    text-decoration: none;
-    margin-bottom: 10px; /* Espaciado entre íconos */
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #fff;
-}
-
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #aaa;
-}
-
-.footer-bottom p {
-    margin: 0;
-}
-
-/* Estilo de la sección de redes sociales */
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px 0;
-    text-align: center; /* Centra el texto dentro de cada sección */
-}
-
-.footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-/* Redes sociales en columna */
+/* Redes sociales */
 .social-icons {
     display: flex;
     flex-direction: column; /* Coloca los íconos en una columna */
     align-items: center; /* Centra los íconos horizontalmente */
     justify-content: center; /* Centra los íconos verticalmente */
+    margin: 0 auto;
 }
 
 .social-icons a {
@@ -228,4 +150,40 @@ nav a {
 
 .social-icons a:hover {
     color: #fff;
+}
+
+/* Estilos para las imágenes de productos */
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);  /* Animación de aumento de imagen */
+}
+
+.product-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilo del contenedor de la galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas por fila */
+    gap: 20px;
+    padding: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
