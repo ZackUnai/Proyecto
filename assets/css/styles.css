@@ -189,3 +189,44 @@ nav a {
 .footer-bottom p {
     margin: 0;
 }
+header, footer {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Centra los elementos en el header */
+    align-items: center;
+    gap: 20px; /* Espacio entre el logo y los enlaces de navegación */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centra los enlaces de navegación en el espacio disponible */
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
