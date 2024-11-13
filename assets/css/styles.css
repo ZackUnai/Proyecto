@@ -238,7 +238,7 @@ search-btn {
 }
 
 .search-btn i {
-    font-size: 24px; /* Ajusta el tamaño del icono según tus necesidades */
+    font-size: 14px; /* Ajusta el tamaño del icono según tus necesidades */
 }
 
 .search-btn:hover {
