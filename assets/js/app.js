@@ -1,5 +1,5 @@
 const suggestions = [
-    "Manzanas",
+    "Nike Stride",
     "Bananas",
     "Peras",
     "Uvas",
