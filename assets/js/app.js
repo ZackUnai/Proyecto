@@ -3,7 +3,7 @@ const suggestions = [
     "Nike Dri-FIT Legend",
     "Nike Form",
     "Nike Totality",
-    "Naranjas",
+    "Nike Pro Camo",
     "Mangos",
     "Fresas",
     "Cerezas",
