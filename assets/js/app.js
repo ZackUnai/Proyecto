@@ -8,7 +8,19 @@ const suggestions = [
     "Fresas",
     "Cerezas",
     "Kiwi",
-    "Sandías"
+    "Sandías",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi"
 ];
 
 function showSuggestions() {
