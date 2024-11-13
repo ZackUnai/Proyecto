@@ -1,14 +1,26 @@
 const suggestions = [
-    "Manzanas",
-    "Bananas",
-    "Peras",
-    "Uvas",
-    "Naranjas",
-    "Mangos",
+    "Nike Stride",
+    "Nike Dri-FIT Legend",
+    "Nike Form",
+    "Nike Totality",
+    "Nike Pro Camo",
+    "Nike",
     "Fresas",
     "Cerezas",
     "Kiwi",
-    "Sandías"
+    "Sandías",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi",
+    "Fresas",
+    "Cerezas",
+    "Kiwi"
 ];
 
 function showSuggestions() {
