@@ -8,9 +8,9 @@ const suggestions = [
     "Camiseta Visitante Selección Argentina 1994",
     "Camiseta Visitante Selección Colombia 24",
     "Camiseta Local Alemania 24",
-    "Sandías",
-    "Fresas",
-    "Cerezas",
+    "Camiseta Local España 24",
+    "Camiseta Local Bélgica 24",
+    "Camiseta Local Italia 2024 Versión Jugador",
     "Kiwi",
     "Fresas",
     "Cerezas",
@@ -56,72 +56,4 @@ document.addEventListener('click', (event) => {
         document.getElementById('suggestions-box').style.display = "none";
     }
 });
-<!-- es -->
-<!-- confuso -->
-<!-- ¿verdad? -->
-<!-- sin -->
-<!-- embargo -->
-<!-- sabes -->
-<!-- perfectamente -->
-<!-- cuando -->
-<!-- estás -->
-<!-- mal, -->
-<!-- todo -->
-<!-- tu -->
-<!-- cuerpo -->
-<!-- física -->
-<!-- y -->
-<!-- mentalmente -->
-<!-- te -->
-<!-- lo -->
-<!-- hace -->
-<!-- saber, -->
-<!-- te -->
-<!-- notas -->
-<!-- flojo -->
-<!-- con -->
-<!-- pensamientos -->
-<!-- fatalistas -->
-<!-- esa -->
-<!-- sensación -->
-<!-- que -->
-<!-- todo -->
-<!-- está -->
-<!-- perdido, -->
-<!-- qué -->
-<!-- ya -->
-<!-- nada -->
-<!-- será -->
-<!-- como -->
-<!-- antes, -->
-<!-- te -->
-<!-- torturas -->
-<!-- recordando -->
-<!-- una -->
-<!-- vivencia -->
-<!-- pasada -->
-<!-- aleatoria -->
-<!-- en -->
-<!-- aquel -->
-<!-- momento -->
-<!-- ni -->
-<!-- siquiera -->
-<!-- parecía -->
-<!-- un -->
-<!-- buen -->
-<!-- momento -->
-<!-- pero -->
-<!-- comparado -->
-<!-- como -->
-<!-- te -->
-<!-- sientes -->
-<!-- ahora -->
-<!-- podría -->
-<!-- incluso -->
-<!-- decirse -->
-<!-- que... -->
-<!-- Fuiste -->
-<!-- feliz -->
-<!-- sin -->
-<!-- saberlo -->
 
