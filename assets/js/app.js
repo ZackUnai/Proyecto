@@ -35,18 +35,18 @@ const suggestions = [
     "Nike Invincible 3",
     "Tenis de Senderismo Terrex Anylander",
     "Tenis de Senderismo Terrex Anylander Corte Medio",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas"
+    "Nike Storm-FIT ADV Club",
+    "Jordan",
+    "Nike Pitch",
+    "Nike Dri-FIT ADV Club",
+    "Nike Goalkeeper Match",
+    "Nike Dri-FIT Club",
+    "Nike Charge",
+    "Nike",
+    "Nike Brasilia 9.5",
+    "Nike Sportswear Everyday Essential",
+    "Nike Multiplier",
+    "Nike Everyday Cushioned"
 ];
 
 function showSuggestions() {
