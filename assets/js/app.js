@@ -11,18 +11,18 @@ const suggestions = [
     "Camiseta Local España 24",
     "Camiseta Local Bélgica 24",
     "Camiseta Local Italia 2024 Versión Jugador",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
-    "Kiwi",
-    "Fresas",
-    "Cerezas",
+    "Nike AeroSwift",
+    "Nike Pro Indy Plunge",
+    "Nike Zenvy",
+    "Nike Swoosh Medium Support",
+    "Nike Trail",
+    "Camiseta Adizero Running",
+    "Nike Sportswear Breaking Windrunner",
+    "Nike One Classic",
+    "Nike Fast",
+    "Camiseta Adicolor 3 Rayas Pinstripe",
+    "Camiseta Own the Run 3 Rayas",
+    "Camiseta Corta Tennis Pro AEROREADY",
     "Kiwi",
     "Fresas",
     "Cerezas",
@@ -82,4 +82,209 @@ document.addEventListener('click', (event) => {
         document.getElementById('suggestions-box').style.display = "none";
     }
 });
+<!-- es -->
+<!-- confuso -->
+<!-- ¿verdad? -->
+<!-- sin -->
+<!-- embargo -->
+<!-- sabes -->
+<!-- perfectamente -->
+<!-- cuando -->
+<!-- estás -->
+<!-- mal, -->
+<!-- todo -->
+<!-- tu -->
+<!-- cuerpo -->
+<!-- física -->
+<!-- y -->
+<!-- mentalmente -->
+<!-- te -->
+<!-- lo -->
+<!-- hace -->
+<!-- saber, -->
+<!-- te -->
+<!-- notas -->
+<!-- flojo -->
+<!-- con -->
+<!-- pensamientos -->
+<!-- fatalistas -->
+<!-- esa -->
+<!-- sensación -->
+<!-- que -->
+<!-- todo -->
+<!-- está -->
+<!-- perdido, -->
+<!-- qué -->
+<!-- ya -->
+<!-- nada -->
+<!-- será -->
+<!-- como -->
+<!-- antes, -->
+<!-- te -->
+<!-- torturas -->
+<!-- recordando -->
+<!-- una -->
+<!-- vivencia -->
+<!-- pasada -->
+<!-- aleatoria -->
+<!-- en -->
+<!-- aquel -->
+<!-- momento -->
+<!-- ni -->
+<!-- siquiera -->
+<!-- parecía -->
+<!-- un -->
+<!-- buen -->
+<!-- momento -->
+<!-- pero -->
+<!-- comparado -->
+<!-- como -->
+<!-- te -->
+<!-- sientes -->
+<!-- ahora -->
+<!-- podría -->
+<!-- incluso -->
+<!-- decirse -->
+<!-- que... -->
+<!-- Fuiste -->
+<!-- feliz -->
+<!-- sin -->
+<!-- saberlo -->
+<!-- es -->
+<!-- confuso -->
+<!-- ¿verdad? -->
+<!-- sin -->
+<!-- embargo -->
+<!-- sabes -->
+<!-- perfectamente -->
+<!-- cuando -->
+<!-- estás -->
+<!-- mal, -->
+<!-- todo -->
+<!-- tu -->
+<!-- cuerpo -->
+<!-- física -->
+<!-- y -->
+<!-- mentalmente -->
+<!-- te -->
+<!-- lo -->
+<!-- hace -->
+<!-- saber, -->
+<!-- te -->
+<!-- notas -->
+<!-- flojo -->
+<!-- con -->
+<!-- pensamientos -->
+<!-- fatalistas -->
+<!-- esa -->
+<!-- sensación -->
+<!-- que -->
+<!-- todo -->
+<!-- está -->
+<!-- perdido, -->
+<!-- qué -->
+<!-- ya -->
+<!-- nada -->
+<!-- será -->
+<!-- como -->
+<!-- antes, -->
+<!-- te -->
+<!-- torturas -->
+<!-- recordando -->
+<!-- una -->
+<!-- vivencia -->
+<!-- pasada -->
+<!-- aleatoria -->
+<!-- en -->
+<!-- aquel -->
+<!-- momento -->
+<!-- ni -->
+<!-- siquiera -->
+<!-- parecía -->
+<!-- un -->
+<!-- buen -->
+<!-- momento -->
+<!-- pero -->
+<!-- comparado -->
+<!-- como -->
+<!-- te -->
+<!-- sientes -->
+<!-- ahora -->
+<!-- podría -->
+<!-- incluso -->
+<!-- decirse -->
+<!-- que... -->
+<!-- Fuiste -->
+<!-- feliz -->
+<!-- sin -->
+<!-- saberlo -->
+<!-- es -->
+<!-- confuso -->
+<!-- ¿verdad? -->
+<!-- sin -->
+<!-- embargo -->
+<!-- sabes -->
+<!-- perfectamente -->
+<!-- cuando -->
+<!-- estás -->
+<!-- mal, -->
+<!-- todo -->
+<!-- tu -->
+<!-- cuerpo -->
+<!-- física -->
+<!-- y -->
+<!-- mentalmente -->
+<!-- te -->
+<!-- lo -->
+<!-- hace -->
+<!-- saber, -->
+<!-- te -->
+<!-- notas -->
+<!-- flojo -->
+<!-- con -->
+<!-- pensamientos -->
+<!-- fatalistas -->
+<!-- esa -->
+<!-- sensación -->
+<!-- que -->
+<!-- todo -->
+<!-- está -->
+<!-- perdido, -->
+<!-- qué -->
+<!-- ya -->
+<!-- nada -->
+<!-- será -->
+<!-- como -->
+<!-- antes, -->
+<!-- te -->
+<!-- torturas -->
+<!-- recordando -->
+<!-- una -->
+<!-- vivencia -->
+<!-- pasada -->
+<!-- aleatoria -->
+<!-- en -->
+<!-- aquel -->
+<!-- momento -->
+<!-- ni -->
+<!-- siquiera -->
+<!-- parecía -->
+<!-- un -->
+<!-- buen -->
+<!-- momento -->
+<!-- pero -->
+<!-- comparado -->
+<!-- como -->
+<!-- te -->
+<!-- sientes -->
+<!-- ahora -->
+<!-- podría -->
+<!-- incluso -->
+<!-- decirse -->
+<!-- que... -->
+<!-- Fuiste -->
+<!-- feliz -->
+<!-- sin -->
+<!-- saberlo -->
+
 
