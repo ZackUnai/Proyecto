@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de enlazar tu archivo CSS -->
+</head>
+<body>
 
+     <header>
+    <div class="logo">
+        <img src="https://clubguia.com/wp-content/uploads/2023/05/logo-820-zuper-quality-ropa-deportiva-ambato-ecuador-licras-hoodies-calentadores-capuchas-ropa-entrenamiento-fitnnes-atletic.png" alt="Sport Style Logo">
+        <h1>SPORT STYLE</h1>
+    </div>
+    <nav>
+        <a href="#">HOME</a>
+        <a href="Productos.html">PRODUCTOS</a>
+        <a href="#"><i class="fas fa-user"></i> Usuario</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        <!-- Agrega el buscador en el medio -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
+            <button class="search-btn">
+                 <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+            </button>
+            <div id="suggestions-box" class="suggestions-box"></div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Sección de información de contacto -->
+            <section class="text-section">
+                <h2>Contáctanos</h2>
+                <p>Para cualquier consulta, no dudes en comunicarte con nosotros. Estamos aquí para ayudarte con cualquier duda sobre nuestros productos y servicios.</p>
+                
+                <div>
+                    <h3>Información de contacto</h3>
+                    <p><strong>Teléfono:</strong> +34 123 456 789</p>
+                    <p><strong>Email:</strong> contacto@ejemplo.com</p>
+                    <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+                </div>
+            </section>
+
+            <!-- Sección de formulario de contacto -->
+            <section class="text-section">
+                <h3>Envía un mensaje</h3>
+                <form action="#" method="post">
+                    <label for="name">Nombre:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="message">Mensaje:</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <!-- Sección de mapa -->
+            <section class="image-section">
+                <h2>Encuéntranos aquí</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508634!2d144.95373531550477!3d-37.8172097425207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727fba8a7fcb68!2sFederation+Square!5e0!3m2!1sen!2sau!4v1568613244903!5m2!1sen!2sau"
+                    width="400" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </section>
+        </div>
+    </div>
+<footer class="footer">
+        <div class="footer-container">
+            <!-- Sección de enlaces -->
+            <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="soporte.html">Soporte</a></li>
+                    <li><a href="#">Envío y Entrega</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Opciones de pago</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Acerca de Nosotros</h3>
+                <ul>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Sostenibilidad</a></li>
+                    <li><a href="#">Inversionistas</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Línea de Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sport Style Hub. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
