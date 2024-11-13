@@ -2,7 +2,7 @@ const suggestions = [
     "Nike Stride",
     "Nike Dri-FIT Legend",
     "Nike Form",
-    "Uvas",
+    "Nike Totality",
     "Naranjas",
     "Mangos",
     "Fresas",
