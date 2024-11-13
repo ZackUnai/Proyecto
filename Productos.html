@@ -19,6 +19,13 @@
             <a href="Productos.html">PRODUCTOS</a>
             <a href="#"><i class="fas fa-user"></i> Usuario</a>
             <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
+            <button class="search-btn">
+                 <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+            </button>
+            <div id="suggestions-box" class="suggestions-box"></div>
+        </div>
         </nav>
     </header>
     <div class="container">
