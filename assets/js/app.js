@@ -4,7 +4,7 @@ const suggestions = [
     "Nike Form",
     "Nike Totality",
     "Nike Pro Camo",
-    "Mangos",
+    "Nike",
     "Fresas",
     "Cerezas",
     "Kiwi",
