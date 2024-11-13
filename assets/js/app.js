@@ -57,9 +57,12 @@ function showSuggestions() {
     // Filtra las sugerencias que coincidan con la búsqueda
     const filteredSuggestions = suggestions.filter(item => item.toLowerCase().includes(query));
 
+    // Limita las sugerencias a las primeras 3
+    const limitedSuggestions = filteredSuggestions.slice(0, 3);
+
     // Si hay sugerencias, muéstralas
-    if (query !== "" && filteredSuggestions.length > 0) {
-        suggestionsBox.innerHTML = filteredSuggestions.map(item => `<div>${item}</div>`).join('');
+    if (query !== "" && limitedSuggestions.length > 0) {
+        suggestionsBox.innerHTML = limitedSuggestions.map(item => `<div>${item}</div>`).join('');
         suggestionsBox.style.display = "block";
     } else {
         suggestionsBox.style.display = "none";
