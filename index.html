@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Style Hub</title>
     <link rel="stylesheet" href="./assets/webfonts/webfonts.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/ccs/sttyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,7 +18,9 @@
         <a href="index.html">HOME</a>
         <a href="Productos.html">PRODUCTOS</a>
         <a href="#"><i class="fas fa-user"></i> Usuario</a>
-        <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        <a href="Carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        <span id="cart-count">0</span>
+            <button onclick="resetCart()">Vaciar carrito</button>
         <!-- Agrega el buscador en el medio -->
         <div class="search-container">
             <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
@@ -42,6 +44,10 @@
                     SportStyle Hub ofrece ropa deportiva diseñada para quienes buscan rendimiento y estilo en cada paso.
                     Nuestras prendas combinan funcionalidad y moda, adaptándose a cualquier actividad, desde el gimnasio hasta la calle.
                     En SportStyle Hub, potenciamos tu desempeño sin sacrificar el estilo que te define.
+                </p>
+
+                <p>
+                    SportStyle Hub es mucho más que una tienda de ropa deportiva, es un estilo de vida para aquellos que buscan no solo desempeñarse al máximo en cada actividad, sino también hacerlo con estilo. Nuestra misión es ofrecer prendas que no solo te acompañen en tu rutina de ejercicio, sino que también se adapten a tu día a día, permitiéndote destacar en cualquier ambiente, ya sea en el gimnasio, en la pista o incluso en las calles de la ciudad.
                 </p>
             </section>
         </main>
@@ -86,7 +92,7 @@
             <p>&copy; 2024 Sport Style Hub. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="./assets/js/app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
 
