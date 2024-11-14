@@ -86,3 +86,104 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+
+// Función para incrementar la cantidad
+function increaseQuantity(button) {
+    let quantityInput = button.parentElement.querySelector(".quantity");
+    let value = parseInt(quantityInput.value);
+    quantityInput.value = value + 1;
+}
+
+// Función para disminuir la cantidad
+function decreaseQuantity(button) {
+    let quantityInput = button.parentElement.querySelector(".quantity");
+    let value = parseInt(quantityInput.value);
+    if (value > 1) {
+        quantityInput.value = value - 1;
+    }
+}
+
+// Inicialización del contador de productos en el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount(); // Muestra el contador del carrito al cargar la página
+});
+
+// Función para añadir productos al carrito
+// Función para añadir productos al carrito
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        let quantityInput = button.parentElement.querySelector(".quantity");
+        let quantity = parseInt(quantityInput.value);
+        let productName = button.parentElement.querySelector("p").textContent; // Obtenemos el nombre del producto
+        let productPrice = button.parentElement.querySelector(".product-price").textContent; // Obtenemos el precio
+        let productImage = button.parentElement.querySelector("img").src; // Obtenemos la imagen del producto
+
+        // Crear objeto del producto
+        let product = {
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+            image: productImage // Agregar la imagen al objeto
+        };
+
+        // Obtener carrito actual desde localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Verificar si el producto ya está en el carrito
+        let existingProduct = cart.find(item => item.name === product.name);
+
+        if (existingProduct) {
+            // Si el producto ya existe, actualizamos la cantidad
+            existingProduct.quantity += quantity;
+        } else {
+            // Si el producto no existe, lo agregamos al carrito
+            cart.push(product);
+        }
+
+        // Guardar el carrito actualizado
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Actualizar el contador del carrito
+        let cartCount = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar todas las cantidades
+        localStorage.setItem('cartCount', cartCount);
+
+        updateCartCount(); // Actualizar el contador visualmente
+    });
+});
+
+
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+    let cartCount = getCartCount();
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Función para obtener el contador del carrito desde localStorage
+function getCartCount() {
+    let cartCount = localStorage.getItem('cartCount',0);
+    return cartCount ? parseInt(cartCount) : 0;
+}
+
+// Función para reiniciar el carrito
+function resetCart() {
+    // Eliminar el carrito y el contador del carrito de localStorage
+    localStorage.removeItem('cart');
+    localStorage.removeItem('cartCount');
+
+    // Actualizar el contador visualmente a 0
+    updateCartCount();
+}
+// Al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    // Recuperar el carrito desde localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Obtener el contador del carrito
+    let cartCount = document.getElementById("cart-count");
+
+    // Actualizar el contador del carrito en la barra de navegación
+    if (cartCount) {
+        cartCount.textContent = cart.length > 0 ? cart.reduce((total, item) => total + item.quantity, 0) : 0;
+    }
+});
