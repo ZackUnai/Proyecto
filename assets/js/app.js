@@ -187,3 +187,69 @@ document.addEventListener("DOMContentLoaded", () => {
         cartCount.textContent = cart.length > 0 ? cart.reduce((total, item) => total + item.quantity, 0) : 0;
     }
 });
+// Función para iniciar sesión y guardar el username en sessionStorage
+function iniciarSesion() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Aquí podrías hacer la validación de la contraseña si lo deseas
+    if (username && password) {
+        sessionStorage.setItem("username", username); // Guarda el username en sessionStorage
+        window.location.href = "index.html"; // Redirige a la página principal
+    }
+    return false; // Previene el envío del formulario
+}
+
+// Función para mostrar el username en cualquier página
+function mostrarUsuario() {
+    const username = sessionStorage.getItem("username");
+    const usuarioLink = document.getElementById("usuario-link");
+
+    if (username && usuarioLink) {
+        usuarioLink.textContent = `USUARIO: ${username}`; // Establece el texto del enlace
+    } else {
+        usuarioLink.textContent = "USUARIO"; // Texto por defecto si no hay usuario
+    }
+}
+
+// Ejecuta mostrarUsuario cuando se carga cada página
+document.addEventListener("DOMContentLoaded", mostrarUsuario);
+
+// Cierre de sesión
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioLink = document.getElementById("usuario-link");
+    const menuUsuario = document.getElementById("menu-usuario");
+
+    // Evento para el enlace de usuario
+    usuarioLink.addEventListener("click", (e) => {
+        e.preventDefault(); // Previene la redirección del enlace
+
+        // Si no hay usuario, redirige a iniciar sesión
+        if (!sessionStorage.getItem("username")) {
+            window.location.href = "usuario.html"; // Redirige a la página de inicio de sesión
+        } else {
+            // Alterna el menú desplegable si ya hay un usuario logueado
+            if (menuUsuario.style.display === "none" || menuUsuario.style.display === "") {
+                menuUsuario.style.display = "block"; // Muestra el submenú
+            } else {
+                menuUsuario.style.display = "none"; // Oculta el submenú
+            }
+        }
+    });
+
+    // Oculta el menú si se hace clic fuera de él
+    document.addEventListener("click", (e) => {
+        if (!usuarioLink.contains(e.target) && !menuUsuario.contains(e.target)) {
+            menuUsuario.style.display = "none"; // Oculta el submenú
+        }
+    });
+
+    // Cierra sesión al hacer clic en "Cerrar sesión"
+    document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
+        e.preventDefault(); // Previene cualquier acción de enlace
+        sessionStorage.removeItem("username"); // Elimina el nombre de usuario del sessionStorage
+        usuarioLink.textContent = "USUARIO"; // Vuelve a mostrar "Usuario"
+        menuUsuario.style.display = "none"; // Oculta el menú desplegable
+        window.location.href = "index.html"; // Redirige a la página de inicio
+    });
+});
