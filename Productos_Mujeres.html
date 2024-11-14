@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Style Productos Mujeres</title>
     <link rel="stylesheet" href="./assets/webfonts/webfonts.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/csss/sttyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,8 +18,19 @@
             <a href="index.html">HOME</a>
             <a href="Productos.html">PRODUCTOS</a>
             <a href="#"><i class="fas fa-user"></i> Usuario</a>
-            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <a href="Carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <span id="cart-count">0</span>
+            <button onclick="resetCart()">Vaciar carrito</button>
+            <div id="cart-dropdown" class="cart-dropdown">
+                <h3>Productos en el carrito</h3>
+                <div id="cart-items"></div>
+                <div id="cart-total">
+                    <p>Total: $<span id="total-price">0.00</span></p>
+                </div>
+                <button id="checkout-btn">Proceder al pago</button>
+            </div>
             <div class="search-container">
+                <div class="cart-icon"></div>
             <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
             <button class="search-btn">
                  <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
@@ -31,54 +42,138 @@
     <div class="container">
     <div class="gallery-container">
     <div class="product-card">
-        <img src="https://nikeco.vtexassets.com/arquivos/ids/677440-500-500?v=638623622214300000" alt="Producto 1">
+        <img src="https://nikeco.vtexassets.com/arquivos/ids/677440-500-500?v=638623622214300000" alt="Producto 14">
         <p>Nike AeroSwift</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
         
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/702805-800-auto?v=638628787395130000&width=800&height=auto&aspect=true" alt="Producto 2">
         <p>Nike Pro Indy Plunge</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/676791-800-auto?v=638623620301470000&width=800&height=auto&aspect=true" alt="Producto 3">
         <p>Nike Zenvy</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/711147-800-auto?v=638641861428400000&width=800&height=auto&aspect=true" alt="Producto 4">
         <p>Nike Swoosh Medium Support</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/659275-500-500?v=638568224263400000" alt="Producto 5">
         <p>Nike Trail</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/2bdd0f6f1eb94c7699b9374989525c89_9366/camiseta-adizero-running.jpg" alt="Producto 6">
         <p>Camiseta Adizero Running</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/668687-500-500?v=638575403075500000" alt="Producto 7">
         <p>Nike Sportswear Breaking Windrunner</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
         
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/519329-500-500?v=638442157157470000" alt="Producto 8">
         <p>Nike One Classic</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/520388-500-500?v=638442158622770000" alt="Producto 9">
         <p>Nike Fast</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/850599eb43144d6281ffd5ccc52328ad_9366/camiseta-adicolor-3-rayas-pinstripe.jpg" alt="Producto 10">
         <p>Camiseta Adicolor 3 Rayas Pinstripe</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/882a279b546c4d36813a9177500264cc_9366/camiseta-own-the-run-3-rayas.jpg" alt="Producto 11">
         <p>Camiseta Own the Run 3 Rayas</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/4bf941d74a884a77986e5df198664220_9366/camiseta-corta-tennis-pro-aeroready.jpg" alt="Producto 12">
         <p>Camiseta Corta Tennis Pro AEROREADY</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <!-- Añade más tarjetas según sea necesario -->
 </div>
