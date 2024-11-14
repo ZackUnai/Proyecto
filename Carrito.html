@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sttyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://clubguia.com/wp-content/uploads/2023/05/logo-820-zuper-quality-ropa-deportiva-ambato-ecuador-licras-hoodies-calentadores-capuchas-ropa-entrenamiento-fitnnes-atletic.png" alt="Sport Style Logo">
+            <h1>SPORT STYLE</h1>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="Productos.html">PRODUCTOS</a>
+            <a href="#"><i class="fas fa-user"></i> Usuario</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <span id="cart-count">0</span>
+            <button onclick="resetCart()">Vaciar carrito</button>
+            <!-- Agrega el buscador en el medio -->
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
+                <button class="search-btn">
+                     <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+                </button>
+                <div id="suggestions-box" class="suggestions-box"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+    <h1>Carrito de Compras</h1>
 
+    <!-- Contenedor donde se mostrarán los productos del carrito -->
+    <div id="cart-container">
+        
+
+    </div>
+    <div class="purchase-section">
+        <button id="purchase-btn" onclick="completePurchase()">Realizar Compra</button>
+    </div>
+    
+    <!-- Contenedor para el mensaje de éxito -->
+    <div id="success-message" style="display: none; text-align: center; font-size: 18px; color: green; margin-top: 20px;">
+        <p>La compra fue realizada con éxito</p>
+    </div>
+    <script>
+        // Cuando la página se carga
+        // Cuando la página se carga
+document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []; // Recupera el carrito desde localStorage
+    let cartContainer = document.getElementById("cart-container");
+
+    // Si el carrito está vacío
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+    } else {
+        // Mostrar los productos en el carrito
+        cart.forEach(item => {
+            let productDiv = document.createElement("div");
+            let price = parseFloat(item.price.replace('$', '')); // Convertir el precio a número
+            let subtotal = price * item.quantity; // Calcular el subtotal por producto
+
+            productDiv.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto; margin-right: 10px;">
+                <div class="product-details">
+                    <p><strong>${item.name}</strong></p>
+                    <p>Precio: $${price.toFixed(2)}</p>
+                    <div class="quantity">
+                        <button onclick="updateQuantity('${item.name}', -1)">-</button>
+                        <span>Cantidad: ${item.quantity}</span>
+                        <button onclick="updateQuantity('${item.name}', 1)">+</button>
+                    </div>
+                    <p class="subtotal">Subtotal: $${subtotal.toFixed(2)}</p>
+                </div>
+            `;
+            cartContainer.appendChild(productDiv);
+        });
+
+        // Mostrar el total
+        let total = cart.reduce((sum, item) => {
+            let price = parseFloat(item.price.replace('$', '')); // Eliminar el signo de dólar para convertir a número
+            return sum + (price * item.quantity);
+        }, 0);
+        cartContainer.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+    }
+});
+
+// Función para actualizar la cantidad de un producto
+function updateQuantity(productName, change) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let product = cart.find(item => item.name === productName);
+    
+    if (product) {
+        product.quantity += change;
+        if (product.quantity <= 0) {
+            cart = cart.filter(item => item.name !== productName); // Eliminar el producto si la cantidad es 0 o menor
+        }
+        localStorage.setItem("cart", JSON.stringify(cart)); // Guardar de nuevo en localStorage
+        location.reload(); // Recargar la página para reflejar los cambios
+    }
+}
+// Función para completar la compra
+function completePurchase() {
+    // Mostrar el mensaje de éxito
+    let successMessage = document.getElementById("success-message");
+    successMessage.style.display = "block"; // Mostrar el mensaje
+    
+    // Ocultar el carrito después de la compra
+    let cartContainer = document.getElementById("cart-container");
+    cartContainer.style.display = "none"; // Ocultar los productos del carrito
+    
+    // Ocultar el botón de realizar compra
+    let purchaseButton = document.getElementById("purchase-btn");
+    purchaseButton.style.display = "none"; // Ocultar el botón de realizar compra
+    
+    // Limpiar el carrito (opcional, si deseas vaciar el carrito después de la compra)
+    localStorage.removeItem("cart"); // Elimina el carrito del localStorage
+    
+    // Actualizar el contador del carrito a 0
+    let cartCount = document.getElementById("cart-count");
+    cartCount.textContent = "0"; // Resetear el contador a 0
+}
+
+
+    </script>
+    
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sección de enlaces -->
+            <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="soporte.html">Soporte</a></li>
+                    <li><a href="#">Envío y Entrega</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Opciones de pago</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Acerca de Nosotros</h3>
+                <ul>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Sostenibilidad</a></li>
+                    <li><a href="#">Inversionistas</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Línea de Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sport Style Hub. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
