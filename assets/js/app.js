@@ -253,3 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "index.html"; // Redirige a la página de inicio
     });
 });
+// Generar un número aleatorio entre 1 y 1000
+const numeroAleatorio = Math.floor(Math.random() * 1000) + 1;
+
+// Mostrar el número aleatorio en el HTML
+document.getElementById('contador').innerText = numeroAleatorio;
+
