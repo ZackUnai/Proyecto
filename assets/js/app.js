@@ -253,15 +253,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "index.html"; // Redirige a la página de inicio
     });
 });
-// Verificar si ya existe un número aleatorio almacenado en localStorage
-let numeroAleatorio = localStorage.getItem('numero_aleatorio');
-
-// Si no existe, generar uno nuevo y almacenarlo
-if (numeroAleatorio === null) {
-    numeroAleatorio = Math.floor(Math.random() * 1000) + 1;
-    localStorage.setItem('numero_aleatorio', numeroAleatorio);
-}
+// Generar un número aleatorio entre 1 y 1000
+const numeroAleatorio = Math.floor(Math.random() * 1000) + 1;
 
 // Mostrar el número aleatorio en el HTML
 document.getElementById('contador').innerText = numeroAleatorio;
-
