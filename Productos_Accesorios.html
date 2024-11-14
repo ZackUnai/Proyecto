@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Style Productos Accesorios</title>
     <link rel="stylesheet" href="./assets/webfonts/webfonts.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/sttyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,8 +18,19 @@
             <a href="index.html">HOME</a>
             <a href="Productos.html">PRODUCTOS</a>
             <a href="#"><i class="fas fa-user"></i> Usuario</a>
-            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <a href="Carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <span id="cart-count">0</span>
+            <button onclick="resetCart()">Vaciar carrito</button>
+            <div id="cart-dropdown" class="cart-dropdown">
+                <h3>Productos en el carrito</h3>
+                <div id="cart-items"></div>
+                <div id="cart-total">
+                    <p>Total: $<span id="total-price">0.00</span></p>
+                </div>
+                <button id="checkout-btn">Proceder al pago</button>
+            </div>
             <div class="search-container">
+                <div class="cart-icon"></div>
             <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
             <button class="search-btn">
                  <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
@@ -33,52 +44,136 @@
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/676461-500-500?v=638623619329900000" alt="Producto 1">
         <p>Nike Storm-FIT ADV Club</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
         
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/658529-500-500?v=638568221875400000" alt="Producto 2">
         <p>Jordan</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/707319-500-500?v=638633879120600000" alt="Producto 3">
         <p>Nike Pitch</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/658629-500-500?v=638568222211730000" alt="Producto 4">
         <p>Nike Dri-FIT ADV Club</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/679605-500-500?v=638623629405330000" alt="Producto 5">
         <p>Nike Goalkeeper Match</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/658480-500-500?v=638568221662070000" alt="Producto 6">
         <p>Nike Dri-FIT Club</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/658512-500-500?v=638568221812170000" alt="Producto 7">
         <p>Nike Charge</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
         
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/713439-500-500?v=638652918398370000" alt="Producto 8">
         <p>Nike Bolso</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/205198-500-500?v=638343803926030000" alt="Producto 9">
         <p>Nike Brasilia 9.5</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/655166-500-500?v=638555387652870000" alt="Producto 10">
         <p>Nike Sportswear Everyday Essential</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/655206-500-500?v=638555387780770000" alt="Producto 11">
         <p>Nike Multiplier</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>
     <div class="product-card">
         <img src="https://nikeco.vtexassets.com/arquivos/ids/655223-500-500?v=638555387830930000" alt="Producto 12">
         <p>Nike Everyday Cushioned</p>
+        <p class="product-price">$99.99</p>
+        <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" class="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
     </div>    
     <!-- Añade más tarjetas según sea necesario -->
 </div>
