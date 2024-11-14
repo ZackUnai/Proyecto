@@ -1,54 +1,31 @@
 const suggestions = [
-    "Nike Stride",
-    "Nike Dri-FIT Legend",
-    "Nike Form",
-    "Nike Totality",
-    "Nike Pro Camo",
-    "Nike Camisa",
-    "Camiseta Visitante Selección Argentina 1994",
-    "Camiseta Visitante Selección Colombia 24",
-    "Camiseta Local Alemania 24",
-    "Camiseta Local España 24",
-    "Camiseta Local Bélgica 24",
-    "Camiseta Local Italia 2024 Versión Jugador",
-    "Nike AeroSwift",
-    "Nike Pro Indy Plunge",
-    "Nike Zenvy",
-    "Nike Swoosh Medium Support",
-    "Nike Trail",
-    "Camiseta Adizero Running",
-    "Nike Sportswear Breaking Windrunner",
-    "Nike One Classic",
-    "Nike Fast",
-    "Camiseta Adicolor 3 Rayas Pinstripe",
-    "Camiseta Own the Run 3 Rayas",
-    "Camiseta Corta Tennis Pro AEROREADY",
-    "Nike Invincible 3",
-    "Nike Air Max 270",
-    "Nike Air Max Sc",
-    "Nike Free Metcon 6",
-    "Tenis de Running Supernova Rise",
-    "Nike Winflo 11",
-    "Tenis Supernova Stride M",
-    "FresaNike Structure 25",
-    "Nike Revolution 7",
-    "Nike Invincible 3",
-    "Tenis de Senderismo Terrex Anylander",
-    "Tenis de Senderismo Terrex Anylander Corte Medio",
-    "Nike Storm-FIT ADV Club",
-    "Jordan",
-    "Nike Pitch",
-    "Nike Dri-FIT ADV Club",
-    "Nike Goalkeeper Match",
-    "Nike Dri-FIT Club",
-    "Nike Charge",
-    "Nike Bolso",
-    "Nike Brasilia 9.5",
-    "Nike Sportswear Everyday Essential",
-    "Nike Multiplier",
-    "Nike Everyday Cushioned"
+    "Nike Stride", "Nike Dri-FIT Legend", "Nike Form", "Nike Totality", "Nike Pro Camo", "Nike Camisa",
+    "Camiseta Visitante Selección Argentina 1994", "Camiseta Visitante Selección Colombia 24", "Camiseta Local Alemania 24", 
+    "Camiseta Local España 24", "Camiseta Local Bélgica 24", "Camiseta Local Italia 2024 Versión Jugador", 
+    "Nike AeroSwift", "Nike Pro Indy Plunge", "Nike Zenvy", "Nike Swoosh Medium Support", "Nike Trail", 
+    "Camiseta Adizero Running", "Nike Sportswear Breaking Windrunner", "Nike One Classic", "Nike Fast", 
+    "Camiseta Adicolor 3 Rayas Pinstripe", "Camiseta Own the Run 3 Rayas", "Camiseta Corta Tennis Pro AEROREADY", 
+    "Nike Invincible 3", "Nike Air Max 270", "Nike Air Max Sc", "Nike Free Metcon 6", "Tenis de Running Supernova Rise", 
+    "Nike Winflo 11", "Tenis Supernova Stride M", "FresaNike Structure 25", "Nike Revolution 7", "Nike Invincible 3", 
+    "Tenis de Senderismo Terrex Anylander", "Tenis de Senderismo Terrex Anylander Corte Medio", "Nike Storm-FIT ADV Club", 
+    "Jordan", "Nike Pitch", "Nike Dri-FIT ADV Club", "Nike Goalkeeper Match", "Nike Dri-FIT Club", "Nike Charge", 
+    "Nike Bolso", "Nike Brasilia 9.5", "Nike Sportswear Everyday Essential", "Nike Multiplier", "Nike Everyday Cushioned"
 ];
 
+// Redireccionar según el texto de la sugerencia
+function getRedirectLink(itemText) {
+    if (suggestions.indexOf(itemText) < 12) {
+        return 'https://zackunai.github.io/Proyecto/Productos_Hombre.html'; // Hombres
+    } else if (suggestions.indexOf(itemText) < 24) {
+        return 'https://zackunai.github.io/Proyecto/Productos_Mujeres.html'; // Mujeres
+    } else if (suggestions.indexOf(itemText) < 36) {
+        return 'https://zackunai.github.io/Proyecto/Productos_Calzados.html'; // Calzado
+    } else {
+        return 'https://zackunai.github.io/Proyecto/Productos_Accesorios.html'; // Accesorios
+    }
+}
+
+// Muestra las sugerencias basadas en la búsqueda
 function showSuggestions() {
     const input = document.getElementById('search');
     const suggestionsBox = document.getElementById('suggestions-box');
@@ -62,18 +39,23 @@ function showSuggestions() {
 
     // Si hay sugerencias, muéstralas
     if (query !== "" && limitedSuggestions.length > 0) {
-        suggestionsBox.innerHTML = limitedSuggestions.map(item => `<div>${item}</div>`).join('');
+        suggestionsBox.innerHTML = limitedSuggestions.map((item) => {
+            const redirectLink = getRedirectLink(item); // Obtener la URL de redirección
+            return `<div><a href="${redirectLink}" class="suggestion-link">${item}</a></div>`;
+        }).join('');
         suggestionsBox.style.display = "block";
     } else {
         suggestionsBox.style.display = "none";
     }
 
-    // Añadir evento para seleccionar una sugerencia
-    const suggestionItems = suggestionsBox.getElementsByTagName('div');
+    // Añadir eventos de clic para redirigir a la URL correspondiente
+    const suggestionItems = suggestionsBox.getElementsByClassName('suggestion-link');
     for (let i = 0; i < suggestionItems.length; i++) {
-        suggestionItems[i].addEventListener('click', () => {
-            input.value = suggestionItems[i].textContent;
-            suggestionsBox.style.display = "none";
+        suggestionItems[i].addEventListener('click', (event) => {
+            // Prevenir el comportamiento predeterminado (seguir el enlace)
+            event.preventDefault();
+            // Redirigir manualmente usando la URL obtenida
+            window.location.href = suggestionItems[i].href;
         });
     }
 }
@@ -85,7 +67,6 @@ document.addEventListener('click', (event) => {
         document.getElementById('suggestions-box').style.display = "none";
     }
 });
-
 
 
 // Función para incrementar la cantidad
