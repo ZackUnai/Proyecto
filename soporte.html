@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte</title>
     <link rel="stylesheet" href="./assets/webfonts/webfonts.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/sttyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <body>
 
@@ -18,7 +18,9 @@
         <a href="index.html">HOME</a>
         <a href="Productos.html">PRODUCTOS</a>
         <a href="#"><i class="fas fa-user"></i> Usuario</a>
-        <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        <a href="Carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        <span id="cart-count">0</span>
+            <button onclick="resetCart()">Vaciar carrito</button>
         <!-- Agrega el buscador en el medio -->
         <div class="search-container">
             <input type="text" id="search" placeholder="Buscar..." oninput="showSuggestions()" autocomplete="off">
@@ -113,6 +115,6 @@
             <p>&copy; 2024 Sport Style Hub. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="app.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
