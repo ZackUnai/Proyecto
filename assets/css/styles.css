@@ -222,6 +222,9 @@ nav a {
    padding: 20px;
    margin: 0 auto;
    overflow: hidden;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .footer-bottom {
