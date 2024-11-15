@@ -1,5 +1,7 @@
 body{
    background-color: #000;
+   overflow-x: hidden; /* Desactiva el desplazamiento horizontal */
+   margin: 0;
 }
 * {
   margin: 0;
