@@ -17,6 +17,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #000;
+ color: white;
+ padding: 10px 20px;
 }
 
 .logo {
@@ -56,11 +59,57 @@ nav a {
   gap: 20px;
 }
 
-@media (min-width: 768px) {
-  .content {
-      flex-direction: row;
-  }
-}
+@media (max-width: 768px) {
+   header {
+     flex-direction: column; /* Cambia la dirección a columna */
+     align-items: center;    /* Centra los elementos en la columna */
+     gap: 10px;              /* Espaciado entre elementos */
+   }
+ 
+   nav {
+     display: flex;
+     flex-wrap: wrap;        /* Permite que los enlaces se ajusten en varias filas */
+     justify-content: center; /* Centra los enlaces horizontalmente */
+     gap: 10px;              /* Espaciado entre enlaces */
+   }
+ 
+   nav a {
+     font-size: 16px;        /* Tamaño del texto ligeramente más pequeño */
+     margin: 5px;            /* Espaciado reducido */
+   }
+ 
+   .logo {
+     margin-bottom: 10px;    /* Añade margen inferior para separar la logo de la navegación */
+   }
+ 
+   .logo img {
+     width: 40px;            /* Reduce el tamaño del logo */
+   }
+ 
+   .logo h1 {
+     font-size: 20px;        /* Reduce el tamaño del texto del logo */
+   }
+   .productos-container {
+       display: grid; /* Usar diseño de cuadrícula */
+       grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+       gap: 10px; /* Espaciado entre productos */
+     }
+   
+     .producto {
+       width: 100%; /* Asegura que cada producto ocupe todo su espacio disponible */
+       text-align: center; /* Centra el contenido */
+     }
+   
+     .producto img {
+       max-width: 100%; /* Ajusta las imágenes al contenedor */
+       height: auto; /* Mantiene proporción de la imagen */
+     }
+ }
+ @media (max-width: 600px) {
+   .productos {
+     grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas pequeñas */
+   }
+ }
 
 .image-section img {
   width: 100%;
